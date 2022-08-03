@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getxtutorial/newPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -146,6 +147,18 @@ class HomePage extends StatelessWidget {
                 );
               },
               child: const Text("show bottom sheet"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Get.to(const NewPage(),
+                //     fullscreenDialog: true,
+                //     transition: Transition.zoom,
+                //     curve: Curves.easeInOut,
+                //     // duration: Duration(milliseconds: 2000),
+                //     arguments: {'key': 'value'});
+                Get.toNamed("/newPsssage", parameters: {"a": "b"});
+              },
+              child: const Text("Go to new Page"),
             ),
           ],
         ),
