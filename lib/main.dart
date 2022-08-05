@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getxtutorial/homePage.dart';
 import 'package:get/get.dart';
 import 'package:getxtutorial/newPage.dart';
+import 'package:getxtutorial/statemanagement.dart';
 import 'package:getxtutorial/unknownRoute.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: "/homePage", page: () => const HomePage()),
         GetPage(name: "/newPage", page: () => const NewPage()),
+        GetPage(name: "/statemanagement", page: () => StateManageMent()),
       ],
       initialRoute: "/homePage",
       defaultTransition: Transition.fade,

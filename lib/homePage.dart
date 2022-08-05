@@ -156,9 +156,9 @@ class HomePage extends StatelessWidget {
                 //     curve: Curves.easeInOut,
                 //     // duration: Duration(milliseconds: 2000),
                 //     arguments: {'key': 'value'});
-                Get.toNamed("/newPsssage", parameters: {"a": "b"});
+                Get.toNamed("/statemanagement");
               },
-              child: const Text("Go to new Page"),
+              child: const Text("Go to statemanagement page"),
             ),
           ],
         ),
