@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getxtutorial/homePage.dart';
 import 'package:get/get.dart';
+import 'package:getxtutorial/myController.dart';
 import 'package:getxtutorial/newPage.dart';
 import 'package:getxtutorial/statemanagement.dart';
 import 'package:getxtutorial/unknownRoute.dart';
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(MyController(), permanent: true, tag: "one");
+    Get.put(MyController(), permanent: true, tag: "two");
     return GetMaterialApp(
       getPages: [
         GetPage(name: "/homePage", page: () => const HomePage()),

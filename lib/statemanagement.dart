@@ -21,11 +21,14 @@ class StateManageMent extends StatelessWidget {
         children: [
           Center(
             child: GetBuilder<MyController>(
-              id: "first",
+              id: "second",
               init: MyController(),
               builder: (MyController myController) {
-                return Text(
-                    "count is : ${Get.find<MyController>().count.value}");
+                return Obx(() {
+                  return Text("count is : ${Get.find<MyController>(
+                    tag: "one",
+                  ).count.value}");
+                });
               },
             ),
           ),
@@ -34,8 +37,10 @@ class StateManageMent extends StatelessWidget {
               id: "second",
               init: MyController(),
               builder: (MyController myController) {
-                return Text(
-                    "count is : ${Get.find<MyController>().count.value}");
+                return Obx(() {
+                  return Text(
+                      "count is : ${Get.find<MyController>(tag: "two").count.value}");
+                });
               },
             ),
           ),
@@ -47,7 +52,7 @@ class StateManageMent extends StatelessWidget {
           // user.update((val) {
           //   user.value.username = "ali";
           // });
-          Get.find<MyController>().increment();
+          Get.find<MyController>(tag: "one").increment();
         },
       ),
     );
